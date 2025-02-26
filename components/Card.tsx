@@ -8,7 +8,7 @@ import ActionDropdown from "./ActionDropdown";
 
 const Card = ({ file }: { file: Models.Document }) => {
   return (
-    <Link href={file.url} target="_blank" className="file-card">
+    <div className="file-card">
       <div className="flex justify-between">
         <Thumbnail
           className="!size-20 "
@@ -33,7 +33,7 @@ const Card = ({ file }: { file: Models.Document }) => {
           By: {file.owner.fullName}
         </p>
       </div>
-    </Link>
+    </div>
   );
 };
 
