@@ -23,9 +23,16 @@ interface Props {
   email: string;
   fullName: string;
   avatar: string;
+  $id: string;
 }
 
-const MobileNavigation = ({ fullName, avatar, email }: Props) => {
+const MobileNavigation = ({
+  fullName,
+  avatar,
+  email,
+  $id: ownerId,
+  accountId,
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -38,7 +45,6 @@ const MobileNavigation = ({ fullName, avatar, email }: Props) => {
         height={52}
         className="h-auto"
       />
-
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger>
           <Image
@@ -94,7 +100,7 @@ const MobileNavigation = ({ fullName, avatar, email }: Props) => {
           </nav>
           <Separator className="my-5 bg-light-200/20" />
           <div className="flex flex-col justify-between gap-5 pb-5">
-            <FileUploader />
+            <FileUploader accountId={accountId} ownerId={ownerId} />
             <Button
               onClick={async () => {
                 await signOutUser();
