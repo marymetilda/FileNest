@@ -104,7 +104,7 @@ const createQueries = (
 export const getFiles = async ({
   types = [],
   searchText = "",
-  sort = "$createdAdt-desc",
+  sort = "$createdAt-desc",
   limit,
 }: GetFilesProps) => {
   const { databases } = await createAdminClient();
