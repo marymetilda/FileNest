@@ -65,7 +65,7 @@ const Sidebar = ({ fullName, avatar, email }: Props) => {
         alt="files"
         width={506}
         height={418}
-        className="w-full"
+        className="w-full max-w-52"
       />
       <div className="sidebar-user-info">
         <Image
