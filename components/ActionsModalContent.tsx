@@ -1,5 +1,5 @@
 import { Models } from "node-appwrite";
-import React, { SetStateAction } from "react";
+import React from "react";
 import Thumbnail from "./Thumbnail";
 import FormattedDateTime from "./FormattedDateTime";
 import { convertFileSize, formatDateTime } from "@/lib/utils";
@@ -9,9 +9,7 @@ import Image from "next/image";
 
 interface ShareInputProps {
   file: Models.Document;
-  onInputChange:
-    | React.Dispatch<React.SetStateAction<string[]>>
-    | React.Dispatch<React.SetStateAction<never[]>>;
+  onInputChange: React.Dispatch<React.SetStateAction<string[]>>;
   onRemove: (email: string) => void;
 }
 
